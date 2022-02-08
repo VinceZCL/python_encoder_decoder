@@ -1,5 +1,3 @@
-import sys
-
 fraw = []
 result = []
 
@@ -23,17 +21,28 @@ def check(data):
         asc += 1
     return asc
 
-if sys.argv[1:]:
-    
-    raw = "".join(sys.argv[1:])
+def decode_binary(binary):
+    global result
+
+    raw = "".join(binary)
     for i in range(0, len(raw), 8):
         fraw.append(raw[i:i+8])
-    
+
     for i in fraw:
         asc = check(i)
         char = chr(asc)
         result.append(char)
-    print(*result)
+    result = "".join(result)
 
-else:
-    print("Please include arguments to decode from binary")
+    return result
+
+if __name__ == "__main__":
+    import sys
+
+    if sys.argv[1:]:
+        
+        final = decode_binary(sys.argv[1:])
+        print(final)
+
+    else:
+        print("Please include arguments to decode from binary")

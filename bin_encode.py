@@ -1,8 +1,6 @@
-import sys
-
 final = []
 
-def binary(data):
+def convert(data):
     
     b2 = ""
     asc = ord(data)
@@ -56,15 +54,22 @@ def binary(data):
     
     return b2
 
-if sys.argv[1:]:
+def encode_binary(string):
+    raw = " ".join(string)
     
-    raw = " ".join(sys.argv[1:])
-
     for i in raw:
-        j = binary(i)
+        j = convert(i)
         final.append(j)
-    
-    print(*final)
+    return final
 
-else:
-    print("Please include argument to encode to binary")
+if __name__ == "__main__":
+    import sys
+
+    if sys.argv[1:]:
+        
+        final = encode_binary(sys.argv[1:])
+        
+        print(*final)
+
+    else:
+        print("Please include argument to encode to binary")
