@@ -25,3 +25,10 @@ python bin_decode.py <binarystring>
 python hex_encode.py <string>
 python hex_decode.py <hexstring>
 ```
+
+## Future plans
+> Other types of encoding and decoding  
+> ROT13  
+> Caesar cipher  
+> base64  
+> etc.
