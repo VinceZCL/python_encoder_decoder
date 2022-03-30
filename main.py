@@ -13,6 +13,7 @@ parser.add_argument("-d", "--decode", help="decode data", action='store_true')
 # parser.add_argument("-m", "--mode", metavar="M", help="set mode (h->hexadecimal) (b->binary)")
 parser.add_argument("--bin", help="set mode to binary", action="store_true")
 parser.add_argument("--hex", help="set mode to hexadecimal", action="store_true")
+parser.add_argument("--rot13", help="set mode to rot13", action="store_true")
 
 args = parser.parse_args()
 
@@ -41,3 +42,11 @@ elif args.hex:
 
         result = hex_decode.decode_hex(args.input)
         print(result)
+
+elif args.rot13:
+    if args.encode:
+        import rot13_encode
+        result = rot13_encode.encode_rot13(args.input)
+        print(result)
+    elif args.decode:
+        pass
