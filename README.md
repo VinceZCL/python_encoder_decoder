@@ -4,7 +4,7 @@ encoding and decoding algorithm in python
 ## Usage
 
 ```
-usage: main.py [-h] [-i S [S ...]] [-e] [-d] [--bin] [--hex]
+usage: main.py [-h] [-i S [S ...]] [-e] [-d] [--bin] [--hex] [--rot13]
 
 string encoder and decoder
 
@@ -16,19 +16,21 @@ options:
   -d, --decode          decode data
   --bin                 set mode to binary
   --hex                 set mode to hexadecimal
+  --rot13               set mode to rot13
 ```
 
 ## Using standalone files
 ```
 python bin_encode.py <string>
-python bin_decode.py <binarystring>
+python bin_decode.py <binary-string>
 python hex_encode.py <string>
-python hex_decode.py <hexstring>
+python hex_decode.py <hex-string>
+python rot13_encode.py <string>
+python rot13_decode.py <rot13-string>
 ```
 
 ## Future plans
 > Other types of encoding and decoding  
-> ROT13  
 > Caesar cipher  
 > base64  
 > etc.

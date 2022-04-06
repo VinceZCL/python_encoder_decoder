@@ -49,4 +49,6 @@ elif args.rot13:
         result = rot13_encode.encode_rot13(args.input)
         print(result)
     elif args.decode:
-        pass
+        import rot13_decode
+        result = rot13_decode.decode_rot13(args.input)
+        print(result)

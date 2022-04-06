@@ -1,19 +1,21 @@
 def encode_rot13(data):
-    raw = "".join(data)
+    raw = " ".join(data)
     out = str()
     for i in raw:
-        asc = ord(i)
-        if asc < 91:
-            if asc < 78:
-                asc += 13
-            else:
-                asc -= 13
-            out += chr(asc)
+        if i == " ":
+            out += i
         else:
-            if asc < 110:
-                asc += 13
+            asc = ord(i)
+            if asc < 91:
+                if asc < 78:
+                    asc += 13
+                else:
+                    asc -= 13
             else:
-                asc -=13
+                if asc < 110:
+                    asc += 13
+                else:
+                    asc -=13
             out += chr(asc)
     return out
 
@@ -24,7 +26,6 @@ if __name__ == "__main__":
         
         result = encode_rot13(sys.argv[1:])
         print(result)
-
 
     else:
         print("Please include arguments to encode to rot13")
