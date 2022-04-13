@@ -19,6 +19,12 @@ options:
   --rot13               set mode to rot13
 ```
 
+## Example
+```
+python main.py (-e/--encode) (--bin/--hex/--rot13) -i <string>
+python main.py (-d/--decode) (--bin/--hex/--rot13) -i <encoded-string>
+```
+
 ## Using standalone files
 ```
 python bin_encode.py <string>
